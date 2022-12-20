@@ -9,6 +9,7 @@ import userRouter from './user/user.route';
 import vaccinationRouter from './vaccionation/vaccination.route';
 import deserializeUser from './middleware/deserializeUser';
 import helmet from 'helmet';
+import swaggerUi from "swagger-ui-express";
 
 import { json } from 'body-parser';
 
@@ -19,6 +20,17 @@ const app = express();
 app.use(cookieParser());
 app.use(json());
 app.use(express.urlencoded({ extended: false }));
+
+app.use(
+    "/docs",
+    swaggerUi.serve,
+    swaggerUi.setup(undefined, {
+      swaggerOptions: {
+        url: "../swagger.json",
+      },
+    })
+  );
+
 app.use(helmet());
 app.use(deserializeUser);
 

@@ -9,6 +9,7 @@ export class VaccinationController {
     async create(req: Request<{}, {}, VaccinationBody>, res: Response, next: NextFunction) {
         try {
             const body = req.body;
+            console.log(body);
             const vaccination = await this.repository.create(body);
 
             return res.status(201).json(vaccination);
@@ -41,11 +42,12 @@ export class VaccinationController {
     async update(req: Request, res: Response, next: NextFunction) {
         try {
             const { id }  = req.params;
+            console.log('id ', id);
             const body = req.body;
 
-            const vaccination = await this.repository.update(id, body);
+            //const vaccination = await this.repository.update(id, body);
 
-            return res.status(200).json(vaccination);
+            //return res.status(200).json(vaccination);
         } catch (error) {
             next(error);
         }

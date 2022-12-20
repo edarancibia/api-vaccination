@@ -21,6 +21,6 @@ export class Drug {
     @Column()
     available_at: Date;
 
-    @OneToMany(() => Vaccination, vaccination => vaccination.drug)
-    vaccinations: Vaccination[];
+    // @OneToMany(() => Vaccination, vaccination => vaccination.drug)
+    // vaccinations: Vaccination;
 }

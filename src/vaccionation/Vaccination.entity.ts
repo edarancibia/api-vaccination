@@ -1,4 +1,4 @@
-import { Column, CreateDateColumn, Entity, ManyToOne, PrimaryGeneratedColumn } from "typeorm";
+import { Column, CreateDateColumn, Entity, JoinColumn, ManyToOne, PrimaryGeneratedColumn } from "typeorm";
 import { Drug } from "../drug/Drug.entity";
 
 @Entity()
@@ -19,6 +19,7 @@ export class Vaccination {
     @CreateDateColumn()
     date: Date;
 
-    @ManyToOne(() => Drug, drug => drug.vaccinations)
+    @ManyToOne(() => Drug)
+    @JoinColumn({ referencedColumnName: 'id' })
     drug: Drug;
 }
