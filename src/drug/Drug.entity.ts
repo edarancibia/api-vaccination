@@ -1,5 +1,4 @@
-import { Column, Entity, OneToMany, PrimaryGeneratedColumn } from "typeorm";
-import { Vaccination } from "../vaccionation/Vaccination.entity";
+import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
 
 @Entity()
 export class Drug {
@@ -21,6 +20,4 @@ export class Drug {
     @Column()
     available_at: Date;
 
-    // @OneToMany(() => Vaccination, vaccination => vaccination.drug)
-    // vaccinations: Vaccination;
 }

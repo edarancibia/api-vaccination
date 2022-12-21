@@ -10,9 +10,6 @@ export class Vaccination {
     @Column()
     name: string;
 
-    // @Column()
-    // drug_id: number;
-
     @Column()
     dose: number;
 

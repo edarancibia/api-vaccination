@@ -45,9 +45,9 @@ export class VaccinationController {
             console.log('id ', id);
             const body = req.body;
 
-            //const vaccination = await this.repository.update(id, body);
+            const vaccination = await this.repository.update(id, body);
 
-            //return res.status(200).json(vaccination);
+            return res.status(200).json(vaccination);
         } catch (error) {
             next(error);
         }

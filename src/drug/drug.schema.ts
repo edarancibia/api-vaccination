@@ -1,5 +1,19 @@
 import { boolean, date, number, object, string, TypeOf } from 'zod';
 
+/**
+ * @openapi
+ * components:
+ *  schemas:
+ *    DrugBody:
+ *      type: object
+ *      required:
+ *        - name
+ *        - approved
+ *        - min_dose
+ *        - max_dose
+ *        - available_at
+ */
+
 export const drugSchema = {
     body: object({
         name: string({
