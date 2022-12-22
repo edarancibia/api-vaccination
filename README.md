@@ -6,6 +6,7 @@
 <li>Clone repository</li>
 <li> Run npm install for installing depencencies</li>
 <li>Run application using npm run dev</li>
+<li>Run test cases with npm run test</li>
 
 <br>
 <p><strong>Database</strong><p>
