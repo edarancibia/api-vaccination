@@ -15,7 +15,7 @@ import { json } from 'body-parser';
 
 const port = config.get<string>('port');
 
-const app = express();
+export const app = express();
 
 app.use(cookieParser());
 app.use(json());

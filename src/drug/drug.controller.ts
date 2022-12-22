@@ -24,6 +24,9 @@ export class DrugController {
             const { id } = req.params;
             const drug = await this.respository.get(id);
 
+            if(!drug){
+                return res.status(404).json({error: 'Drug not found'})
+            }
             return res.status(200).json(drug);
         } catch (error) {
             next(error);
@@ -33,6 +36,10 @@ export class DrugController {
     async list(req: Request, res: Response, next: NextFunction) {
         try {
             const drugs = await this.respository.list();
+
+            if(!drugs){
+                return res.status(404).json({message: 'Drugs not found'})
+            }
             return res.status(200).json(drugs);
         } catch (error) {
             next(error);

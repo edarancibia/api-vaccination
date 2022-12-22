@@ -15,7 +15,7 @@ export class DrugRepository implements DataBaseRepository<Drug> {
         const repository = database.getRepository(Drug);
         const drugs = await repository.find();
 
-        if(!drugs) throw new Error('No data found');
+        //if(!drugs) throw new Error('No data found');
 
         return drugs;
     }
@@ -23,9 +23,9 @@ export class DrugRepository implements DataBaseRepository<Drug> {
         const repository = database.getRepository(Drug);
         const drug = await repository.findOneBy({ id: id as any });
 
-        if(!drug) throw new Error('Drug does not exists');
+        //if(!drug) throw new Error('Drug does not exists');
 
-        return drug;
+        return drug as any;
     }
     async update(id: Id, data: Drug, query?: Query | undefined): Promise<Drug> {
         const repository = database.getRepository(Drug);
